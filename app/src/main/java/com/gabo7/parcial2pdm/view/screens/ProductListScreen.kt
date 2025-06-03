@@ -30,7 +30,7 @@ fun ProductListScreen(viewModel: ProductViewModel, navController: NavController)
     Column (
         modifier = Modifier
             .fillMaxSize()
-            .padding(10.dp)
+            .padding(top = 30.dp)
     ) {
 
         TextField(
@@ -40,20 +40,18 @@ fun ProductListScreen(viewModel: ProductViewModel, navController: NavController)
             placeholder = { Text("Busca producto por nombre o categoria") }
         )
 
+        Button(
+            onClick = { navController.navigate(Screens.CartScreen.route)}
+        ) {
+            Text("Ver el carrito")
+        } //aqui solo movi de lugar el boton del carrito
+
         LazyColumn {
             items (products) { product ->
                 ProductCard(product) {
                     navController.navigate(Screens.ProductDetailScreen.createRoute(product.id))
                 }
             }
-        }
-
-        Spacer(modifier = Modifier.height(10.dp))
-
-        Button(
-            onClick = { navController.navigate(Screens.CartScreen.route)}
-        ) {
-            Text("Ver el carrito")
         }
     }
 }

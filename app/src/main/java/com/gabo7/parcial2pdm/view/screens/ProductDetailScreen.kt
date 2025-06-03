@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +25,7 @@ fun ProductDetailScreen(product : Product, navController: NavController) {
     Column (
         modifier = Modifier
             .fillMaxSize()
+            .padding(top = 30.dp)
     ) {
 
         Button(
@@ -33,6 +33,7 @@ fun ProductDetailScreen(product : Product, navController: NavController) {
             modifier = Modifier.padding(bottom = 8.dp)
         ) {
             Text("←")
+            Text("${product.name}") //esto lo hice para mostrar que el contenido si se guarda
         }
 
         Spacer(modifier = Modifier.height(5.dp))
@@ -48,7 +49,10 @@ fun ProductDetailScreen(product : Product, navController: NavController) {
                     model = product.image,
                     contentDescription = "Product Image",
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp) //esto es lo unico que me falto para que se mostrara bien la pantalla de detalles
+                    //se me fue la onda de colocarle un tamano fijo con la presura de terminarlo a tiempo
                 )
             }
 

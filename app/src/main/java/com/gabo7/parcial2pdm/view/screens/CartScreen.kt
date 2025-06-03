@@ -25,7 +25,9 @@ fun CartScreen(viewModel: ProductViewModel = viewModel(), navController : NavCon
     val products by viewModel.filteredProducts.collectAsState()
 
     Column (
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 30.dp)
     ) {
 
         Button(

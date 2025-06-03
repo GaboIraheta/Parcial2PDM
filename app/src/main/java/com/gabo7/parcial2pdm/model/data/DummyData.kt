@@ -9,7 +9,7 @@ val dummyProducts = listOf(
         category = "Electrónica",
         price = 45.99,
         description = "Auriculares Bluetooth con cancelación de ruido y hasta 12 horas de batería.",
-        image = "https://example.com/images/auriculares.png"
+        image = "https://cdnx.jumpseller.com/furst-mayorista/image/46624735/resize/1000/1000?1712949829" //le puse una imagem con acceso para probar
     ),
     Product(
         id = 2,
